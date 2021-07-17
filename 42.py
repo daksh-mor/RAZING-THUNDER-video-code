@@ -1,0 +1,28 @@
+from manim import *
+from manim.utils import tex_templates
+class S1(Scene):
+    def construct(self):
+        t = Text("A team led by Andrew Sutherland \nof MIT and Andrew Booker of \nBristol University has solved \nthe final piece of a \nfamous 65-year old math puzzle with an \nanswer for the most elusive \nnumber of all: 42",line_spacing =2).set_color_by_gradient(RED,BLUE,GREEN,YELLOW,PURPLE)
+        self.play(Write(t),run_time = 2.5)
+        self.wait(4.5)
+        t2 = Text("The number 42 is especially significant\n to fans of science fiction \nnovelist Douglas Adams’ \n“The Hitchhiker’s Guide to the Galaxy,” \nbecause that number is the answer \ngiven by a supercomputer to \n“the Ultimate Question of Life, \nthe Universe, and Everything.”",line_spacing=2).set_color_by_gradient(RED,BLUE,GREEN,YELLOW,PURPLE)
+        self.play(FadeOut(t),FadeIn(t2),run_time = 2)
+        self.wait(7)
+        t3 = Text("Booker also wanted \nto know the answer\nto 42 problem.That is, are there\nthree cubes whose sum is 42?",line_spacing =2).set_color_by_gradient(RED,BLUE,GREEN,YELLOW,PURPLE)
+        self.play(FadeOut(t2),FadeIn(t3),run_time = 2)
+        self.wait(7)
+        myTemplate = TexTemplate()
+        myTemplate.add_to_preamble(r"\usepackage{setspace}")
+        myTemplate.add_to_preamble(r"\doublespacing")
+        t4 = Tex("This sum of three cubes puzzle, \\\\first set in 1954 at the University of \\\\Cambridge and known as the Diophantine Equation\\\\$x^3+y^3+z^3=k$, challenged mathematicians\\\\to find solutions for numbers 1-100. \\\\With smaller numbers, this type of \\\\equation is easier to solve:",tex_template = myTemplate).set_color_by_gradient(RED,BLUE,GREEN,YELLOW,PURPLE)
+        self.play(FadeOut(t3),FadeIn(t4),run_time = 2)
+        self.wait(7)
+        t5 = Tex("for example, $29$ could be \\\\written as $3^3 + 1^3 + 1^3$, \\\\while 32 is unsolvable. All were\\\\eventually solved, or proved unsolvable, \\\\using various techniques and supercomputers, \\\\except for two numbers: 33 and 42.",tex_template = myTemplate).set_color_by_gradient(RED,BLUE,GREEN,YELLOW,PURPLE)
+        self.play(FadeOut(t4),FadeIn(t5),run_time = 2)
+        self.wait(7)
+        t6 = Text("Booker devised an \ningenious algorithm \nand spent weeks on his \nuniversity’s supercomputer \nwhen he recently came up \nwith a solution for 33. \nBut when he turned \nto solve for 42, Booker \nfound that the computing needed was an \norder of magnitude higher and might \nbe beyond his supercomputer’s capability",line_spacing=2).set_color_by_gradient(RED,BLUE,GREEN,YELLOW,PURPLE)
+        self.play(FadeOut(t5),FadeIn(t6),run_time = 2)
+        self.wait(7)
+        t7 = Text("42 = the answer to the \.ultimate question of life, \.the universe, and everything. \nbecause of its unsolvability",line_spacing=2).set_color_by_gradient(RED,BLUE,GREEN,YELLOW,PURPLE)
+        self.play(FadeOut(t6),FadeIn(t7),run_time = 1)
+        self.wait(2.5)
